@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:world_countries_with_resp_api/core/theme/app_theme.dart';
 import 'package:world_countries_with_resp_api/features/country/data/data_sources/remote_country_data_source.dart';
 import 'package:world_countries_with_resp_api/features/country/data/repositories_impl/country_repository_impl.dart';
 import 'package:world_countries_with_resp_api/features/country/domain/use_cases/get_countries.dart';
@@ -22,6 +23,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: HomePage());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.lightTheme,
+      home: HomePage(),
+    );
   }
 }

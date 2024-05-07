@@ -16,8 +16,16 @@ class CountryRepositoryImpl implements CountryRepository {
     try {
       final response = await _countryDataSource.getCountries();
       if (response != null) {
-        final countryList =
-            response.map((e) => CountryModel().toEntity()).toList();
+        final countryList = response
+            .map((e) => CountryModel(
+                  name: e.name,
+                  capital: e.capital,
+                  population: e.population,
+                  timezones: e.timezones,
+                  continents: e.continents,
+                  flags: e.flags,
+                ).toEntity())
+            .toList();
         return right(countryList);
       }
     } on ApiException catch (e) {
