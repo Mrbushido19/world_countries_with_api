@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 import 'package:world_countries_with_resp_api/core/classes/flags_class.dart';
@@ -28,9 +26,28 @@ class DetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(name!.common ?? "untitled"),
-      ),
-    );
+        appBar: AppBar(
+          title: Text(name!.common ?? "untitled"),
+        ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.network(
+              flags!.png ?? "",
+              height: 100,
+              width: double.infinity,
+            ),
+            Text(
+              "Capital: ${capital![0]}",
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              "population: $population",
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            )
+          ],
+        ));
   }
 }

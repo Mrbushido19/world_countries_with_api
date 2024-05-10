@@ -1,9 +1,14 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 class SearchWidget extends StatelessWidget {
+  final TextEditingController controller;
+  final Function(String)? onChanged;
   const SearchWidget({
-    super.key,
-  });
+    Key? key,
+    required this.controller,
+    required this.onChanged,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +21,8 @@ class SearchWidget extends StatelessWidget {
           border: Border.all(width: 3)),
       child: Center(
         child: TextField(
+            controller: controller,
+            onChanged: onChanged,
             style: TextStyle(color: Colors.black, fontSize: 18),
             decoration: InputDecoration(
                 hintText: "Search",
