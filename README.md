@@ -53,7 +53,7 @@ Les contributions sont les bienvenues ! Si vous souhaitez contribuer à ce proje
 
 ## Auteur
 
-InfoPays a été développé par [Votre Nom](https://github.com/votre-utilisateur).
+InfoPays a été développé par [Bu$hi](https://github.com/Mrbushido19).
 
 ## Licence
 
